@@ -5,7 +5,6 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
-console.log(debug);
 
 module.exports = {
     entry: './src/index.js',
@@ -40,6 +39,20 @@ module.exports = {
                 ]
             },
             {
+                test: /\.(scss|sass)$/,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            minimize: !debug,
+                            sourceMap: debug
+                        }
+                    },
+                    "sass-loader"
+                ]
+            },
+            {
                 test: /\.html$/,
                 use: {
                     loader: 'html-loader'
@@ -71,6 +84,8 @@ module.exports = {
         new CleanWebpackPlugin(['dist'])
     ],
     devServer: {
-        port: 9000
-      }
+        port: 9000,
+        // hot: true
+      },
+    watch: debug
 };

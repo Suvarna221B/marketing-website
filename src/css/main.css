@@ -1,7 +1,42 @@
-#js-content{
-    color: red;
+html,body{
+    padding: 0;
+    margin: 0;
+    overflow-y: hidden;
+    height: 100%;
 }
 
-.excel-logo{
-    height: 30px;
+
+body{
+    background-color: #000;
+}
+
+
+
+
+.nav-header{
+    width: 100vw;
+    position: fixed;
+    z-index: 100;
+}
+
+
+.nav-bar{
+    display: grid;    
+    grid-template-columns: 20vw auto 40vw;
+}
+
+.nav-bar .logo-container{
+    grid-column-start: 1;
+    padding-left: 3.6em;
+    padding-top:2em;
+    padding-bottom:0.5em; 
+}
+
+.nav-bar .logo-container .excel-logo{
+    height: 5em;
+}
+
+.nav-bar .nav-menu{
+    text-transform: uppercase;
+    grid-column-start: 3;
 }
