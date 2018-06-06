@@ -59,7 +59,7 @@ module.exports = {
                 }
             },
             {
-                test: /\.(jpg|png|svg|gif)$/,
+                test: /\.(jpg|png|svg|gif|jpeg)$/,
                 use: {
                     loader: 'file-loader',
                     options: {
@@ -68,6 +68,12 @@ module.exports = {
                         publicPath: debug?null:'/img'
                     }
                 }
+            },
+            {
+                test: /\.mp4$/,
+                use: [{
+                    loader: 'file'
+                }]
             }
         ]
     },
