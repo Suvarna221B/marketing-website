@@ -11,8 +11,7 @@ module.exports = {
     mode: debug?'development':'production',
     output: {
         filename: 'bundle.[hash].js',
-        path: path.resolve(__dirname,'docs'),
-        publicPath: '/marketing-website/'
+        path: path.resolve(__dirname,'dist'),
     },
 
     module: {
@@ -74,6 +73,16 @@ module.exports = {
                 test: /\.mp4$/,
                 use: [{
                     loader: 'file'
+                }]
+            },            {
+                test: /\.(woff|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+                use: [{
+                    loader: 'file-loader',
+                    options: {
+                        name: '[name].[ext]',
+                        outputPath: debug?null:'/fonts',
+                        publicPath: debug?null:'/fonts'
+                    }
                 }]
             }
         ]

@@ -68,6 +68,10 @@ html, body {
   .center{
       text-align: center;
   }
+
+  .right{
+    text-align: right;
+  }
   
   .center-mobile{
     text-align: initial;
@@ -152,9 +156,9 @@ html, body {
   
   
   #excel{
-      padding-top: 1px;
-      background: #34495E;
-  
+    padding-top: 1px;
+    background: #34495E;
+    background: #111111;
   }
   
   #sponsors{
@@ -325,18 +329,19 @@ html, body {
     /*margin-left: 0px;
      height: 600px;*/
     background-color:  rgba(245, 245, 245, 0.85);
+    background: none;
   }
   
   .excel-font {
       font-family: 'Ubuntu', sans-serif;
       font-size: 8vh;
-    opacity: 0.6;
   }
   
   .excel-font-heading {
-      font-family: 'Ubuntu', sans-serif;
+      font-family: 'BerlinX';
       font-size: 8vh;
-    opacity: 0.7;
+      letter-spacing: 1px;
+      color: #1bad89;
   }
   
   .logo-excel--big {
@@ -362,9 +367,9 @@ html, body {
   .excel-content--main {
     margin-left: 50px;
     margin-right: 50px;
-    font-size: 3vh;
-    /*color: white;
-    font-family: 'Satisfy', cursive;*/
+    font-size: 2vh;
+    color: white;
+    /* font-family: 'Satisfy', cursive;*/
     font-weight: Light;
   }
   
