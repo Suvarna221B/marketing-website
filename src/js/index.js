@@ -6,7 +6,7 @@ var scroll = true;
     let hvscroll = new HtoVScroll({
         container: document.getElementById('slide'),
         slideCount: document.getElementsByClassName('slide').length,
-        callback: c => console.log(c)
+        callback: c => {if(c){console.log(c)}}
     });
 
     let updateAnchor = (index)=>{
@@ -29,6 +29,7 @@ var scroll = true;
                 }
             }
         });
+        console.log(index)
         var anchor = navbar.children[index].children[0].children[0]
         var classList = anchor.getAttribute("class")
         if(classList==null)
@@ -39,7 +40,7 @@ var scroll = true;
                     return false
                 return true
             })
-            console.log(classList)
+            // console.log(classList)
             classList.push("disable-click")
             classList = classList.join(" ")
             anchor.setAttribute("class", classList)
@@ -47,6 +48,7 @@ var scroll = true;
     }
 
     window.addEventListener('wheel', e => {
+        // console.log(scroll)
         if(!scroll)
             return
         scroll = false
