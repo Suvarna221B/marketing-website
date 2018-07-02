@@ -1,6 +1,7 @@
 
 export class HtoVScroll{
     constructor(options){
+        this.index = 0;
         this.currentScrollPosition = 0;
         this.container = options.container;
         this.containerWidth = this.container.clientWidth;
@@ -10,6 +11,12 @@ export class HtoVScroll{
         this.onScroll = this.onScroll.bind(this);
         this.slideCallback = options.callback || null;
         this.slideWidth = this.maxTranslateValue/this.numberOfSlides;
+    }
+
+    indexChange(s){
+        var tmp = this.index + s;
+        tmp = Math.max(0, tmp);
+        this.index = Math.min(((this.numberOfSlides)-1), tmp);
     }
 
     trimValue(val){

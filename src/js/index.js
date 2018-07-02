@@ -1,12 +1,14 @@
 import { HtoVScroll } from './horizontal-scroll' 
 
-var scroll = true;
 
 (()=>{
+
+    let scroll = true;
+
     let hvscroll = new HtoVScroll({
         container: document.getElementById('slide'),
         slideCount: document.getElementsByClassName('slide').length,
-        callback: c => {if(c){console.log(c)}}
+        callback: c => {/*if(c){console.log(c)}*/}
     });
 
     let updateAnchor = (index)=>{
@@ -21,15 +23,15 @@ var scroll = true;
                         return false
                     return true
                 })
-                var index = Array.prototype.indexOf.call(classList, "disable-click")
-                if(index != -1){
-                    classList.splice(index , 1)
+                var i = Array.prototype.indexOf.call(classList, "disable-click")
+                if(i != -1){
+                    classList.splice(i , 1)
                     classList = classList.join(" ")
                     anchor.setAttribute("class", classList)
                 }
             }
         });
-        console.log(index)
+        // console.log(index)
         var anchor = navbar.children[index].children[0].children[0]
         var classList = anchor.getAttribute("class")
         if(classList==null)
@@ -49,14 +51,16 @@ var scroll = true;
 
     window.addEventListener('wheel', e => {
         // console.log(scroll)
-        if(!scroll)
+        var windowWidth = window.innerWidth
+        var sign = e.deltaY == 0 ? 0 : ( e.deltaY / Math.abs(e.deltaY) )
+        if(!scroll || hvscroll.index+sign<0 || hvscroll.index+sign>=hvscroll.numberOfSlides)
             return
         scroll = false
         setTimeout(()=>{scroll = true}, 750)
-        var windowWidth = window.innerWidth
-        var sign = ( e.deltaY / Math.abs(e.deltaY) )
         hvscroll.onScroll(windowWidth * sign)
-        updateAnchor(hvscroll.currentScrollPosition/windowWidth)
+        console.log(hvscroll)
+        hvscroll.indexChange(sign)
+        updateAnchor(hvscroll.index)
     },false)
 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -65,10 +69,11 @@ var scroll = true;
             var windowWidth = window.innerWidth
             var container = this.parentElement.parentElement.parentElement
             var navbarLink = this.parentElement.parentElement
-            var index = Array.prototype.indexOf.call(container.children, navbarLink)
-            var delta = (index*windowWidth) - hvscroll.currentScrollPosition
+            var i = Array.prototype.indexOf.call(container.children, navbarLink)
+            var delta = (i*windowWidth) - hvscroll.currentScrollPosition
             hvscroll.updateScrollPosition(delta)
-            updateAnchor(hvscroll.currentScrollPosition/windowWidth)
+            hvscroll.indexChange(i - hvscroll.index)
+            updateAnchor(hvscroll.index)
         });
     });
     
