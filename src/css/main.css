@@ -93,6 +93,12 @@ html, body {
     padding: 20px;
     font-size: 30px;
     text-align: center;
+    border-style: solid;
+    border-width: 0px;
+    background: white;
+    border-radius: 50%;
+    margin: 8px auto;
+    width: 97px;
   }
   
   h2{
@@ -105,6 +111,11 @@ html, body {
       font-family: 'Work Sans', sans-serif;
       font-size: 7
   }
+
+  p{
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 800;
+  }
   
     .section-content{
       text-align: center;
@@ -114,6 +125,7 @@ html, body {
   #home{
       min-height:auto;
       background: #34495E;
+      background: #062544;
       overflow:hidden;
       position: relative;
   }
@@ -159,12 +171,13 @@ html, body {
     padding-top: 1px;
     background: #34495E;
     background: #111111;
+    background: #15405c;
   }
   
   #sponsors{
       padding-top: 1px;
       background:rgb(255, 255, 255) ;
-  
+      background: #062544;  
   }
   
   /*experience */
@@ -173,13 +186,14 @@ html, body {
       min-height: auto;
       background: rgba(63, 195, 128,0.9);
       overflow:hidden;
-  
+      background: #15405c;
   }
   
   #gallery{
     padding-top: 1px;
     /* background: ghostwhite;*/
     background: url("./../img/whitediamond.png");
+    background: #062544;  
     min-height: initial;
     padding-bottom: 15rem;
   }
@@ -187,12 +201,13 @@ html, body {
   /* contact */
   #contacts{
     background:rgba(26, 188, 156,0.8);
+    background: #15405c;
     min-height: auto;
   }
   
   .contact-content{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-auto-rows: auto;
   grid-gap: 1.5em;
   padding: 1.5em;
@@ -203,15 +218,17 @@ html, body {
   }
   
   .contact-img{
-   height:13em;
-   border-radius: 20em;
-  
+    height:13em;
+    border-radius: 20em;
   }
   
   .contact-desc{
-  padding:15px;
-  color:white;
-  text-align: center;
+    line-height: 35px;
+    display: inline-block;
+    vertical-align: middle;
+    padding:15px;
+    color:white;
+    text-align: left;
   }
   
   
@@ -272,9 +289,9 @@ html, body {
     filter: grayscale(100%);*/
   }
    .sponsor-font{
-    font-family: 'Fredericka the Great', cursive;
+    font-family: 'Nanum Gothic', sans-serif;
     font-size: 6vh;
-    color: black;
+    color: white;
     margin-bottom:10px;
    }
   
@@ -287,19 +304,19 @@ html, body {
   }
   
   .heading-font{
-    font-family: 'Work Sans', sans-serif;
+    font-family: 'Nanum Gothic', sans-serif;
     font-size: 7vh;
-    opacity: 0.6;
+    color: white;
   }
   
   .heading-font-white{
-    font-family: 'Work Sans', sans-serif;
+    font-family: 'Nanum Gothic', sans-serif;
     font-size: 7vh;
     color: white;
   }
   
   .heading-font-white-no-margin{
-    font-family: 'Work Sans', sans-serif;
+    font-family: 'Nanum Gothic', sans-serif;
     font-size: 7vh;
     color: white;
   }
@@ -339,7 +356,7 @@ html, body {
   }
   
   .excel-font-heading {
-      font-family: 'BerlinX';
+      font-family: 'Nanum Gothic';
       font-size: 8vh;
       letter-spacing: 1px;
       color: #1bad89;
@@ -426,7 +443,7 @@ html, body {
       width: 100%;
       padding: 10px;
       z-index: 3;
-      background: rgba(0,0,0,0.5);
+      /* background: rgba(0,0,0,0.5); */
       /* background-color:rgb(255, 255, 255); */
       /*box-shadow: 0 1px 3px #434343;*/
       /*-webkit-box-shadow: 0 1px 3px #434343;*/
@@ -590,6 +607,7 @@ html, body {
     }
   
     .heading-font{
+      font-family: 'Nanum Gothic';
       font-size: 2.5rem;
     }
   
@@ -835,4 +853,10 @@ html, body {
       margin: 50px auto 65px auto;
       padding: 0 20px;
     }
+  }
+
+
+  .contact-img-container{
+    display: inline-block;
+    vertical-align: middle;
   }
