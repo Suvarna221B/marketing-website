@@ -1,5 +1,9 @@
+:root {
+  --primary-color: black;
+  --secondary-color: white;
+}
+
 html,body{
-    padding: 0;
     margin: 0;
     overflow-y: hidden;
     height: 100%;
@@ -8,6 +12,10 @@ html,body{
 
 body{
     background-color: #000;
+}
+
+#associate{
+  background: var(--primary-color);
 }
 
 .associate-grid-container-1{
@@ -61,6 +69,35 @@ body{
     width: 100vw;
     position: fixed;
     z-index: 100;
+}
+
+#reach{
+  background: var(--secondary-color);
+}
+
+.reach-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 40px 0px;
+}
+
+.reach-img{
+  height: 130px;
+}
+
+.reach-subtext{
+  font-size: 20px;
+  display: block;
+  color: black;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.reach-text{
+  font-size: 20px;
+  display: block;
+  color: black;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 600;
 }
 
 
@@ -117,8 +154,15 @@ html, body {
     text-align: right;
   }
   
-  .center-mobile{
-    text-align: initial;
+  .center-mobile-0{
+    text-align: right;
+    padding-bottom: 10px;
+    color: white;
+  }
+  .center-mobile-1{
+    text-align: right;
+    padding-bottom: 10px;
+    color: black;
   }
   section{
       min-height: 754px;
@@ -170,6 +214,7 @@ html, body {
       min-height:auto;
       background: #34495E;
       background: #062544;
+      background: var(--primary-color);
       overflow:hidden;
       position: relative;
   }
@@ -216,12 +261,13 @@ html, body {
     background: #34495E;
     background: #111111;
     background: #15405c;
+    background: var(--secondary-color);
   }
   
   #sponsors{
       padding-top: 1px;
       background:rgb(255, 255, 255) ;
-      background: #062544;  
+      background: var(--primary-color);
   }
   
   /*experience */
@@ -231,6 +277,10 @@ html, body {
       background: rgba(63, 195, 128,0.9);
       overflow:hidden;
       background: #15405c;
+      background: var(--secondary-color);
+  }
+  #experience .heading-font-white-no-margin{
+    color: #1bad89;
   }
   
   #gallery{
@@ -240,12 +290,14 @@ html, body {
     background: #062544;  
     min-height: initial;
     padding-bottom: 15rem;
+    background: var(--primary-color);
   }
   
   /* contact */
   #contacts{
     background:rgba(26, 188, 156,0.8);
     background: #15405c;
+    background: var(--secondary-color);
     min-height: auto;
   }
   
@@ -271,7 +323,7 @@ html, body {
     display: inline-block;
     vertical-align: middle;
     padding:15px;
-    color:white;
+    color:black;
     text-align: left;
   }
   
@@ -430,7 +482,7 @@ html, body {
     margin-left: 50px;
     margin-right: 50px;
     font-size: 2vh;
-    color: white;
+    color: black;
     /* font-family: 'Satisfy', cursive;*/
     font-weight: Light;
   }
@@ -599,10 +651,17 @@ html, body {
     .Navbar-Link--toggleShow {
       display: flex;
     }
-    .center-mobile{
+    .center-mobile-0{
       text-align: right;
       padding-bottom: 10px;
+      color: white;
     }
+    .center-mobile-1{
+      text-align: right;
+      padding-bottom: 10px;
+      color: black;
+    }
+
     .excel-logo{
       height: 40px;
     }
@@ -735,7 +794,7 @@ html, body {
   
   @media only screen and (min-width: 786px) {
     .Navbar-Link a{
-    color: white;
+      color: inherit;
    }
    .excel-content2 {
     margin-left: 0px;
@@ -904,3 +963,11 @@ html, body {
     display: inline-block;
     vertical-align: middle;
   }
+
+
+.reach-heading{
+  color: #1bad89;
+  font-family: 'Nanum Gothic', sans-serif;
+  font-size: 6vh;
+  margin-bottom: 10px;
+}

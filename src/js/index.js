@@ -15,6 +15,11 @@ import { HtoVScroll } from './horizontal-scroll'
         var navbar = document.getElementById('navid')
         var links = Array.from(navbar.children)
         links.forEach(element => {
+            var classNo = index % 2;
+            var anchorContainer = element.children[0];
+            var newClass = anchorContainer.getAttribute("class").replace("center-mobile-1", "center-mobile-"+classNo)
+            newClass = newClass.replace("center-mobile-0", "center-mobile-"+classNo)
+            anchorContainer.setAttribute("class", newClass)
             var anchor = element.children[0].children[0]
             var classList = anchor.getAttribute("class")
             if(classList!=null){
