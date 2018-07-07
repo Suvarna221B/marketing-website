@@ -760,12 +760,20 @@ footer i{
   .reach-subtext{
     font-size:8px;
   }
+  #gallery .flickity-viewport{
+    height:240px !important;
+  }
+  #gallery .flickity-slider img{
+    width:66%;
+    height:66%;
+
+  }
   .sponsor-font{
     margin-bottom:2px;
   }
 
   .heading-font-white {
-    margin-top: 0px;
+    margin-top: 20px;
     margin-bottom: 0px;
   }
 
@@ -792,27 +800,28 @@ footer i{
    /*contact */
  .contact-content{
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-gap: .8em;
-    padding: 1em;
+    grid-template-columns: 2fr;
+    grid-template-rows: auto;
+    grid-gap: .4em;
+    padding: 0em;
   }
 
   .contact-card{
-    padding: 1em;
+    padding: 0em;
   }
 
   .contact-img{
-     height: 8em;
+     height: 4em;
      border-radius: 20em;
 
   }
 
   .contact-desc{
-    padding:10px;
+    padding:0px;
     font-size:16px;
-    color:white;
+    color:black;
     text-align: center;
+    line-height:16px;
   }
 
   .excel-font {
