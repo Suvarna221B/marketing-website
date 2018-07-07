@@ -743,6 +743,23 @@ footer i{
     line-height:1.4;
     display:inline-block;
   }
+  .reach-grid{
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 3px 0px;
+  }
+  .reach-heading{
+    font-size:5vh;
+    margin-bottom:2px;
+  }
+  .reach-img{
+    height:32px;
+  }
+  .reach-text{
+    font-size:11px;
+  }
+  .reach-subtext{
+    font-size:8px;
+  }
   .sponsor-font{
     margin-bottom:2px;
   }
