@@ -12,6 +12,7 @@ module.exports = {
     output: {
         filename: 'bundle.[hash].js',
         path: path.resolve(__dirname,'dist'),
+        publicPath: 'http://www.google.com/partners/'
     },
 
     module: {
@@ -65,7 +66,7 @@ module.exports = {
                     options: {
                         name: '[name].[hash].[ext]',
                         outputPath: debug?null:'/img',
-                        publicPath: debug?null:'/img'
+                        publicPath: debug?null:'/partners/img'
                     }
                 }
             },
@@ -81,7 +82,7 @@ module.exports = {
                     options: {
                         name: '[name].[ext]',
                         outputPath: debug?null:'/fonts',
-                        publicPath: debug?null:'/fonts'
+                        publicPath: debug?null:'/partners/fonts'
                     }
                 }]
             }
