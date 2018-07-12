@@ -15,13 +15,32 @@
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 </head>
 <body>
+    <script>
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+    }
+
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+    }
+    </script>
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a class="Navbar-Link" href="#excel">Excel</a>
+      <a class="Navbar-Link" href="#associate">Associate</a>
+      <a class="Navbar-Link" href="#excel">Reach</a>
+      <a class="Navbar-Link" href="#sponsors">Sponsors</a>
+      <a class="Navbar-Link" href="#experience">Experience</a>
+      <a class="Navbar-Link" href="#gallery">Gallery</a>
+      <a class="Navbar-Link" href="#contacts">Contacts</a>
+    </div>
     <div class="nav-header">
         <div class="Navbar">
             <div class="Navbar-Title">
                 <img src="img/excel-logo.png" class="excel-logo">
             </div>
             <div class="Navbar-Link--Toggle">
-                <div id="trigger" style="color: whitesmoke;"> &#x2630; </div>
+                <div id="trigger" style="color: whitesmoke;" onclick="openNav()"> &#x2630; </div>
             </div>
             <nav id="navid" class="Navbar-Items Navbar-Items--Right">
                 <div class="Navbar-Link">
@@ -334,7 +353,7 @@
                 <p class="heading-font-white-no-margin center">Experience</p>
                 <div class="main-gallery">
                     <div class="gallery-cell">
-                        <div class="testimonial">
+                        <div class="testimonial" >
                             <img class="testimonial-avatar" src="./img/testimonials/gowry.jpg">
                             <p class="testimonial-quote">"Kick-ass energy and lovely crowd. Loved it. Wanna come back again and have more fun..."</p>
                             <span class="testimonial-author">Gowry Lekshmi</span>
@@ -444,7 +463,7 @@
                                 <span>Marketing Manager</span>
                                 <br>
                                 <i class="fa fa-envelope"></i>
-                                <span>rakeshkr@excelmec.org</span>
+                                <span>joevarghese@excelmec.org</span>
                                 <br>
                                 <i class="fa fa-phone"></i>
                                 <span style="opacity: 0.8;">+91 99952 94391

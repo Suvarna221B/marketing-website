@@ -13,6 +13,44 @@ html,body{
 body{
     background-color: #000;
 }
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
 
 #associate{
   background: var(--primary-color);
@@ -671,7 +709,7 @@ footer i{
   }
 
   .excel-container {
-    grid-auto-rows: auto;
+    grid-template-rows: 1fr 6fr;
     grid-template-columns: 1fr;
     grid-row-gap: 0px;
     /*new code delete if not centered both sections*/
@@ -682,14 +720,14 @@ footer i{
     padding: 0px;
     margin-top: 40px;
     margin-bottom: 0px;
-    height: 9vh;
+    height: 11vh;
   }
 
   .logo-excel--small {
     padding: 10px 7px;
     margin-top: 30px;
-    height: 3vh;
-    width:3vh;
+    height: 5vh;
+    width:5vh;
   }
 
   .excel-content2 {
@@ -699,7 +737,7 @@ footer i{
   }
 
   .excel-content--main {
-    margin-top: 0px;
+    margin-top: -10px;
     font-size: 9px;
     margin-left: 5px;
     margin-right: 5px;
@@ -760,12 +798,19 @@ footer i{
   .reach-subtext{
     font-size:8px;
   }
+  .main-gallery{
+    height:50%;
+  }
+  .testimonial-avatar{
+    width:82px;
+  }
   #gallery .flickity-viewport{
     height:240px !important;
   }
   #gallery .flickity-slider img{
     width:66%;
     height:66%;
+    top:16%;
 
   }
   .sponsor-font{
@@ -785,8 +830,12 @@ footer i{
   .grid-container {
     display: grid;
     grid-gap: 5px 10px;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto auto;
     padding: 5px;
+    height: 350px;
+    max-width: 102%;
+    overflow-y: scroll;
+    overflow-x: scroll;
   }
 
   .grid-item {
@@ -808,6 +857,8 @@ footer i{
 
   .contact-card{
     padding: 0em;
+    text-align: left;
+    margin-left: 15%;
   }
 
   .contact-img{
@@ -820,7 +871,7 @@ footer i{
     padding:0px;
     font-size:16px;
     color:black;
-    text-align: center;
+    text-align: left;
     line-height:16px;
   }
 
@@ -976,6 +1027,7 @@ body { font-family: sans-serif; }
 
 /* flickety testimonial*/
 .main-gallery {
+  height:50%;
   background: #fff;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
 }
@@ -1022,8 +1074,10 @@ body { font-family: sans-serif; }
     padding: 10px 30px;
   }
   .testimonial{
-    margin: 50px auto 65px auto;
-    padding: 0 20px;
+    margin: 3px auto 65px auto;
+    padding: 0 21px;
+    margin-bottom:10px;
+    line-height:0.9;
   }
 }
 

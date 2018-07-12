@@ -91,7 +91,7 @@ import { HtoVScroll } from './horizontal-scroll'
         contain: true,
         wrapAround: true,
         prevNextButtons: false,
-        autoPlay: 1500,
+        // autoPlay: 2000,
         prevNextButtons: true
     });
 
