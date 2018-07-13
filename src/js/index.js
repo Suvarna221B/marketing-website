@@ -3,6 +3,27 @@ import { HtoVScroll } from './horizontal-scroll'
 
 (()=>{
 
+    var isMobile = {
+        Android: function() {
+            return navigator.userAgent.match(/Android/i);
+        },
+        BlackBerry: function() {
+            return navigator.userAgent.match(/BlackBerry/i);
+        },
+        iOS: function() {
+            return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+        },
+        Opera: function() {
+            return navigator.userAgent.match(/Opera Mini/i);
+        },
+        Windows: function() {
+            return navigator.userAgent.match(/IEMobile/i) || navigator.userAgent.match(/WPDesktop/i);
+        },
+        any: function() {
+            return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+        }
+    };
+
     let scroll = true;
 
     let hvscroll = new HtoVScroll({
@@ -54,33 +75,56 @@ import { HtoVScroll } from './horizontal-scroll'
         }
     }
 
-    window.addEventListener('wheel', e => {
-        // console.log(scroll)
-        var windowWidth = window.innerWidth
-        var sign = e.deltaY == 0 ? 0 : ( e.deltaY / Math.abs(e.deltaY) )
-        if(!scroll || hvscroll.index+sign<0 || hvscroll.index+sign>=hvscroll.numberOfSlides)
-            return
-        scroll = false
-        setTimeout(()=>{scroll = true}, 750)
-        hvscroll.onScroll(windowWidth * sign)
-        console.log(hvscroll)
-        hvscroll.indexChange(sign)
-        updateAnchor(hvscroll.index)
-    },false)
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
+    if(!isMobile.any()){
+        window.addEventListener('wheel', e => {
+            // console.log(scroll)
             var windowWidth = window.innerWidth
-            var container = this.parentElement.parentElement.parentElement
-            var navbarLink = this.parentElement.parentElement
-            var i = Array.prototype.indexOf.call(container.children, navbarLink)
-            var delta = (i*windowWidth) - hvscroll.currentScrollPosition
-            hvscroll.updateScrollPosition(delta)
-            hvscroll.indexChange(i - hvscroll.index)
+            var sign = e.deltaY == 0 ? 0 : ( e.deltaY / Math.abs(e.deltaY) )
+            if(!scroll || hvscroll.index+sign<0 || hvscroll.index+sign>=hvscroll.numberOfSlides)
+                return
+            scroll = false
+            setTimeout(()=>{scroll = true}, 750)
+            hvscroll.onScroll(windowWidth * sign)
+            console.log(hvscroll)
+            hvscroll.indexChange(sign)
             updateAnchor(hvscroll.index)
+        },false)
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                var windowWidth = window.innerWidth
+                var container = this.parentElement.parentElement.parentElement
+                var navbarLink = this.parentElement.parentElement
+                var i = Array.prototype.indexOf.call(container.children, navbarLink)
+                var delta = (i*windowWidth) - hvscroll.currentScrollPosition
+                console.log(i)
+                hvscroll.updateScrollPosition(delta)
+                hvscroll.indexChange(i - hvscroll.index)
+                updateAnchor(hvscroll.index)
+            });
         });
-    });
+    }
+    else{
+        window.addEventListener('wheel', e => {
+            var windowWidth = window.innerWidth
+            var pos = document.body.scrollLeft
+            var i = Math.floor(pos/windowWidth)
+            console.log(i)
+        },false)
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                var windowWidth = window.innerWidth
+                var container = this.parentElement
+                var navbarLink = this
+                var i = Array.prototype.indexOf.call(container.children, navbarLink)
+                i--
+                document.body.scrollLeft = i * windowWidth
+            });
+        });
+    }
     
     
 
@@ -91,7 +135,7 @@ import { HtoVScroll } from './horizontal-scroll'
         contain: true,
         wrapAround: true,
         prevNextButtons: false,
-        autoPlay: 1500,
+        // autoPlay: 2000,
         prevNextButtons: true
     });
 
