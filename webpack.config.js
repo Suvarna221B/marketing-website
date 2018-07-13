@@ -11,8 +11,7 @@ module.exports = {
     mode: debug?'development':'production',
     output: {
         filename: 'bundle.[hash].js',
-        path: path.resolve(__dirname,'dist'),
-        publicPath: 'http://www.google.com/partners/'
+        path: path.resolve(__dirname,'dist')
     },
 
     module: {
@@ -56,7 +55,10 @@ module.exports = {
             {
                 test: /\.html$/,
                 use: {
-                    loader: 'html-loader'
+                    loader: 'html-loader',
+                    options: {
+                        minimize: false
+                    }
                 }
             },
             {
