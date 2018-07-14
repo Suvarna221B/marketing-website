@@ -33,6 +33,7 @@ body{
   color: #818181;
   display: block;
   transition: 0.3s;
+  line-height:22px;
 }
 
 .sidenav a:hover {
@@ -41,10 +42,24 @@ body{
 
 .sidenav .closebtn {
   position: absolute;
-  top: 0;
+  top: 30px;
   right: 25px;
-  font-size: 36px;
+  font-size: 30px;
   margin-left: 50px;
+}
+.home-next{
+  right:0px;
+  top:50vh;
+  color: white;
+  margin-left: 94vw;
+  margin-top: 28vh;
+  font-size:130px !important;
+  animation: left-right 0.5s infinite;
+  animation-direction: alternate;
+}
+@keyframes left-right{
+  0%{margin-left:92vw;}
+  100%{margin-left:94vw;}
 }
 
 @media screen and (max-height: 450px) {
@@ -658,12 +673,22 @@ footer i{
   transform: translateY(-50%);
   height: 60vh;
 }
+.mec-logo{
+  left:0px;
+  position:absolute;
+  margin:0px;
+  margin-left:4vw;
+  height:20vh;
+}
   
 @media only screen and (max-width: 786px) { 
 
   #home{
     text-align: center;
-    padding-top: 100px;
+    padding-top: 90px;
+  }
+  .mec-logo{
+    height:10vh;
   }
 
   #gallery{
@@ -734,6 +759,18 @@ footer i{
     grid-row-gap: 0px;
     /*new code delete if not centered both sections*/
     align-items: center;
+  }
+  .home-next{
+    position: absolute;
+    top: 13vh;
+    font-size: 70px !important;
+    animation: left-right-mob 0.5s infinite;
+    animation-direction: alternate;
+    margin-right:16px;
+  }
+  @keyframes left-right-mob{
+    0%{margin-right:0px;}
+    100%{margin-left:5px;}
   }
 
   .logo-excel--big {
@@ -835,6 +872,11 @@ footer i{
   }
   .sponsor-font{
     margin-bottom:2px;
+    margin-top:42px;
+  }
+  .sponsor-image{
+    max-height:13vh;
+    margin-top:8px;
   }
 
   .heading-font-white {
@@ -852,7 +894,7 @@ footer i{
     grid-gap: 5px 10px;
     grid-template-columns: auto auto;
     padding: 5px;
-    height: 350px;
+    height: 50vh;
     max-width: 102%;
     overflow-y: scroll;
     overflow-x: scroll;
@@ -860,7 +902,7 @@ footer i{
 
   .grid-item {
     padding: 10px;
-    font-size: 50px;
+    font-size: 26px;
     text-align: center;
   }
   .footer-img{
@@ -917,7 +959,7 @@ footer i{
   }
 
   .main-logo{
-    height: 40vh;
+    height: 35vh;
     position: initial;
     transform: none;
     left: 0px;
@@ -940,6 +982,9 @@ footer i{
   .uline{
     font-size: 14vw;
   }
+  .fa{
+    font-size:13px;
+  }
 }
   
 @media only screen and (min-width: 786px) {
@@ -950,7 +995,7 @@ footer i{
     margin-left: 0px;
   }
   .landing-content{
-    right: 0%;
+    right: 6%;
   }
 }
   
@@ -1069,8 +1114,8 @@ body { font-family: sans-serif; }
 .testimonial {
   text-align: center;
   max-width: 850px;
-  margin: 100px auto 130px auto;
-  padding: 0 20px;
+  margin: 0px auto 130px auto;
+  padding: 0 10px;
 }
 
 .testimonial-avatar {
