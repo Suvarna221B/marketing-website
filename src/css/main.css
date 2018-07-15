@@ -83,7 +83,7 @@ body{
   grid-auto-rows: auto;
   grid-gap: 1.5em;
   padding: 1.5em;
-  margin: 50px 0px;
+  margin: 0px 0px;
 }
 
 .associate-grid-container-2{
@@ -93,7 +93,7 @@ body{
   grid-auto-rows: auto;
   grid-gap: 1.5em;
   padding: 1.5em;
-  margin: 50px 0px;
+  margin: 0px 0px;
 }
 
 .associate-grid-item{
@@ -102,10 +102,11 @@ body{
 
 .associate-img{
   vertical-align: middle;
+  height:21vh;
 }
 
 .associate-text{
-  font-size: 20px;
+  font-size: 15px;
   display: inline-block;
   width: 300px;
   text-align: left;
@@ -136,11 +137,11 @@ body{
 .reach-grid{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 40px 0px;
+  grid-gap: 0px 0px;
 }
 
 .reach-img{
-  height: 130px;
+  height: 75px;
 }
 
 .reach-subtext{
@@ -363,12 +364,12 @@ video{
 display: grid;
 grid-template-columns: 1fr 1fr;
 grid-auto-rows: auto;
-grid-gap: 1.5em;
-padding: 1.5em;
+grid-gap:0px;
+padding:0px;
 }
 
 .contact-card{
-padding: 2em;
+padding: 0.3em;
 }
 
 .contact-img{
@@ -1141,7 +1142,9 @@ body { font-family: sans-serif; }
   display: block;
   font-size: 24px;
   font-weight: 300;
-  padding: 10px 0;
+  padding: 0px 0px;
+  margin-top:10px;
+  margin-bottom:10px;
 }
 
 .testimonial-author {
@@ -1182,4 +1185,5 @@ body { font-family: sans-serif; }
   font-family: 'Nanum Gothic', sans-serif;
   font-size: 6vh;
   margin-bottom: 10px;
+  margin-top:5px;
 }
