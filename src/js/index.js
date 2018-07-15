@@ -127,6 +127,7 @@ import { HtoVScroll } from './horizontal-scroll'
     }
     
     
+    window.onresize = function(){ location.reload(); }
 
 
     /* flickety testimonial*/
